@@ -16,6 +16,7 @@ response = openai.Completion.create(
 
 print(response.choices[0].text.strip())
 
+#=====================================================================================================================================
 
 # Hugging Face Transformers (Free Models)
 
@@ -25,7 +26,7 @@ print(response.choices[0].text.strip())
 #pip install torch 
 #pip install tensorflow
 #pip install tensorflow-gpu
-
+from tensorflow import keras
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 model = GPT2LMHeadModel.from_pretrained("gpt2")
@@ -36,11 +37,13 @@ outputs = model.generate(inputs['input_ids'], max_length=50)
 
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
+#=====================================================================================================================================
 
 #Google's T5 and BERT Models
+#pip install sentencepiece
 
 #T5 (Text-to-Text Transfer Transformer) and BERT models are available for free via Hugging Face or directly from Google's repositories.
-
+from tensorflow import keras
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 model = T5ForConditionalGeneration.from_pretrained("t5-small")
@@ -51,27 +54,31 @@ outputs = model.generate(inputs['input_ids'])
 
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
+#=====================================================================================================================================
 
 #EleutherAI's GPT-Neo and GPT-J
-
+#
 #GPT-Neo and GPT-J are open-source models developed by EleutherAI. They are designed to be free alternatives to GPT-3 and can be used via Hugging Face.
 
-from transformers import GPTNeoForCausalLM, GPT2Tokenizer
+#from tensorflow import keras
+#from transformers import GPTNeoForCausalLM, GPT2Tokenizer
 
-model = GPTNeoForCausalLM.from_pretrained("EleutherAI/gpt-neo-1.3B")
-tokenizer = GPT2Tokenizer.from_pretrained("EleutherAI/gpt-neo-1.3B")
+#model = GPTNeoForCausalLM.from_pretrained("EleutherAI/gpt-neo-1.3B")
+#tokenizer = GPT2Tokenizer.from_pretrained("EleutherAI/gpt-neo-1.3B")
 
-prompt = "Once upon a time"
-inputs = tokenizer(prompt, return_tensors="pt")
-outputs = model.generate(inputs['input_ids'], max_length=50)
+#prompt = "Once upon a time"
+#inputs = tokenizer(prompt, return_tensors="pt")
+#outputs = model.generate(inputs['input_ids'], max_length=50)
 
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+#print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
+#=====================================================================================================================================
 
 #BLOOM by BigScience
 
 #BLOOM is a multilingual LLM developed by BigScience, and it's open-source. Available on Hugging Face, it supports more than 45 languages and has multiple model sizes.
 
+from tensorflow import keras
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
@@ -86,18 +93,21 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 #import torch
 #print(torch.__version__)
 
-
-
+#=====================================================================================================================================
 
 #youtube
+#pip install tf-keras
 
 #https://www.youtube.com/watch?v=QEaBAZQCtwE
 
 from transformers import pipeline
+from tensorflow import keras
 
 classifier = pipeline("sentiment-analysis")
 
 res = classifier("I've been waiting for a HuggingFace course my whole life")
+
+res = classifier("I've been stressing with work lately up to the point of not having enough sleep")
 
 print(res)
 
