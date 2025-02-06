@@ -1,0 +1,24 @@
+VS code
+
+install python 3.11 n cari path
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python3.11_3.11.2032.0_x64_qbz5n2kfra8p0\python3.11.exe
+
+run cmd as administrator
+
+update pip & install packages
+python -m pip install --upgrade pip
+
+pip install pandas
+pip install numpy
+pip install xlsxwriter
+
+matplotlib
+
+open visual code
+
+ctrl + shift + enter
+select python interpreter
+
+pip install statsmodels
+pip install scikit-learn
+
