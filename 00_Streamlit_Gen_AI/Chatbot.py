@@ -3,7 +3,7 @@
 #https://platform.openai.com/api-keys
 
 #Create new secret ke
-#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
+
 #xleh guna API ni sbb berbayar
 
 import streamlit as st

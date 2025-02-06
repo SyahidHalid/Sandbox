@@ -3,7 +3,7 @@
 
 #token
 #inspect > Application > Cookies > __Secure-1PSID
-_BARD_API_KEY = "g.a000oAgBehiJ-oGOdD-vaZeWnRy1JKTotkgsApoDDb_mcmMv3RyvWOpm7wUj5KLj1fKiX_sccwACgYKAVcSARMSFQHGX2Mi1A1m73_ZDlpea43c5ipa8hoVAUF8yKqxPG7v-RhNuscaCuCbSugJ0076"
+_BARD_API_KEY =
 
 #from bardapi import Bard
 #import os
